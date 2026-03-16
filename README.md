@@ -4,6 +4,11 @@ A production-ready full-stack Todo application built with **Nhost** (PostgreSQL,
 
 ![Todo App Screenshot](https://via.placeholder.com/800x450?text=Todo+App+Screenshot)
 
+Frontend deployed on Netlify.
+Backend configured with Nhost (GraphQL + Auth).
+Temporary network error may occur due to Nhost DNS propagation.
+All CRUD and authentication logic implemented in the repository.
+
 ## Overview
 
 This application demonstrates a complete integration with Nhost's Backend-as-a-Service platform, featuring:
