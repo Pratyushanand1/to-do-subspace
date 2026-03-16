@@ -1,0 +1,118 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "Obsidian Flow",
+      "concept": "A developer-focused command center. High contrast, keyboard-centric feel, deep matte surfaces.",
+      "emotion": "Focus, Clarity, Precision",
+      "theme": "dark"
+    },
+    "typography": {
+      "font_family": {
+        "primary": "Manrope, sans-serif",
+        "code": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem"
+      },
+      "weights": {
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      }
+    },
+    "colors": {
+      "palette": {
+        "background": "#050505",
+        "surface": "#0A0A0A",
+        "surface_hover": "#121212",
+        "border": "rgba(255, 255, 255, 0.08)",
+        "text_primary": "#EDEDED",
+        "text_secondary": "#A1A1AA",
+        "text_muted": "#52525B",
+        "primary": "#6366f1",
+        "primary_hover": "#4f46e5",
+        "success": "#10b981",
+        "danger": "#ef4444",
+        "overlay": "rgba(0,0,0,0.7)"
+      }
+    },
+    "layout": {
+      "grid": {
+        "base": "max-w-3xl mx-auto px-6"
+      },
+      "spacing": {
+        "section": "py-24",
+        "element": "gap-4",
+        "internal": "p-6"
+      },
+      "radius": {
+        "sm": "0.25rem",
+        "md": "0.5rem",
+        "lg": "0.75rem",
+        "full": "9999px"
+      }
+    },
+    "components": {
+      "buttons": {
+        "primary": "bg-indigo-500 hover:bg-indigo-600 text-white font-medium px-6 py-2.5 rounded-lg transition-all active:scale-95 shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]",
+        "secondary": "bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-2.5 rounded-lg transition-all active:scale-95",
+        "icon": "p-2 rounded-md hover:bg-white/10 text-zinc-400 hover:text-white transition-colors",
+        "danger": "bg-red-500/10 text-red-500 hover:bg-red-500/20 px-4 py-2 rounded-lg transition-colors"
+      },
+      "inputs": {
+        "base": "bg-zinc-900/50 border border-white/10 text-white placeholder:text-zinc-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all w-full",
+        "hero": "bg-transparent border-none text-2xl md:text-3xl text-white placeholder:text-zinc-700 px-0 py-4 focus:ring-0 focus:outline-none w-full font-light tracking-tight"
+      },
+      "cards": {
+        "base": "bg-[#0A0A0A] border border-white/5 rounded-xl overflow-hidden relative"
+      },
+      "list_item": {
+        "base": "group flex items-center justify-between p-4 bg-transparent border-b border-white/5 hover:bg-white/[0.02] transition-colors"
+      }
+    },
+    "motion": {
+      "transitions": {
+        "default": "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+        "slow": "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)"
+      }
+    }
+  },
+  "assets": {
+    "libraries": [
+      "lucide-react",
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ]
+  },
+  "implementation_plan": {
+    "instructions_to_main_agent": [
+      "Install required libraries: `npm install lucide-react framer-motion clsx tailwind-merge`.",
+      "Setup global styles in `index.css`: Force dark mode background `#050505` and text color `#EDEDED`.",
+      "Configure Tailwind: Add custom colors from the palette section to `tailwind.config.js`.",
+      "Auth Pages: Create a centered 'Access Terminal' card. Use `framer-motion` for a subtle entry animation.",
+      "Dashboard: Implement the 'Hero Input' at the top. The list sits below it.",
+      "Todo Item: Use a custom checkbox (SVG) that animates when clicked. Text should gain `line-through` and `text-zinc-600` when completed.",
+      "State Management: Ensure Loading states use a skeleton pulse (`animate-pulse bg-white/5`) instead of a spinner where possible.",
+      "Backend Integration: Use Nhost SDK for auth and GraphQL calls. Handle errors gracefully with toasts (if available) or inline error messages."
+    ]
+  },
+  "universal_guidelines": [
+    "You tend to converge toward generic outputs. Avoid this.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts. Create depth through layered design elements.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) sparingly.",
+    "You MUST NOT apply universal transition (e.g., `transition: all`).",
+    "You MUST NOT center align the app container globally.",
+    "Always use modern button styles.",
+    "NEVER use AI assistant Emoji characters."
+  ]
+}
